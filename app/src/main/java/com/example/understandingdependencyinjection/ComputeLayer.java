@@ -7,8 +7,8 @@ public class ComputeLayer {
     String layer = "Computation";
     NetworkSetup network;
 
-    ComputeLayer(){
-        this.network = new NetworkSetup(4000);
+    ComputeLayer(NetworkSetup networkSetup){
+        this.network = networkSetup;
     }
 
     public void add (int a , int b){
