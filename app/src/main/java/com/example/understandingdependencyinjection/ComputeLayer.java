@@ -2,11 +2,14 @@ package com.example.understandingdependencyinjection;
 
 import android.util.Log;
 
+import javax.inject.Inject;
+
 public class ComputeLayer {
     String TAG = this.getClass().getCanonicalName();
     String layer = "Computation";
     NetworkSetup network;
 
+    @Inject
     ComputeLayer(NetworkSetup networkSetup){
         this.network = networkSetup;
     }
