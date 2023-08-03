@@ -14,10 +14,10 @@ public class ComputeLayer {
         this.network = networkSetup;
     }
 
-    public void add (int a , int b){
+    public boolean add (int a , int b){
         int c = a+b;
         System.out.println(layer + " addition result " + c );
-        network.sendDataToCloud(Integer.toString(c));
+        return network.sendDataToCloud(Integer.toString(c));
     }
 
 
