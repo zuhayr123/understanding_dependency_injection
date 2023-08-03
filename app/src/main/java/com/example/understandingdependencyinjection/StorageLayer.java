@@ -10,7 +10,7 @@ public class StorageLayer {
     @Inject
     StorageLayer(){
         try {
-            Log.e(TAG, "Initialising Storafe" );
+            Log.e(TAG, "Initialising Storage" );
             Thread.sleep(1000);
             Log.e(TAG,"Storage initialization done");
         } catch (InterruptedException e) {
@@ -19,7 +19,7 @@ public class StorageLayer {
     }
 
     public boolean saveDataToStorage(String data){
-        Log.e(TAG,"Sending Data to cloud :: " + data);
+        Log.e(TAG,"Saving data to storage:: " + data);
         return true;
     }
 }
