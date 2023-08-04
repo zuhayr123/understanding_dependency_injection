@@ -1,11 +1,9 @@
 package com.example.understandingdependencyinjection
 
-import android.app.admin.NetworkEvent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.understandingdependencyinjection.di.ComputeComponent
 import com.example.understandingdependencyinjection.di.DaggerComputeComponent
 import javax.inject.Inject
 
@@ -23,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         calculate = findViewById(R.id.calculate_sum)
         val component = DaggerComputeComponent.create()
         component.inject(this)
+        component.inject(computation)
+        component.inject(computation.network)
 
 //        networkSetup = NetworkSetup()
 //        computation = ComputeLayer(networkSetup)

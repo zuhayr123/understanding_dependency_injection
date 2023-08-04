@@ -6,11 +6,10 @@ import javax.inject.Inject;
 
 public class NetworkSetup {
     String TAG = this.getClass().getCanonicalName();
-    StorageLayer storageLayer;
+    @Inject StorageLayer storageLayer;
 
     @Inject
-    NetworkSetup(StorageLayer storageLayer){
-        this.storageLayer = storageLayer;
+    NetworkSetup(){
         try {
             Log.e(TAG, "Initialising network" );
             Thread.sleep(6000);

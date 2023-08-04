@@ -2,6 +2,7 @@ package com.example.understandingdependencyinjection.di;
 
 import com.example.understandingdependencyinjection.ComputeLayer;
 import com.example.understandingdependencyinjection.MainActivity;
+import com.example.understandingdependencyinjection.NetworkSetup;
 
 import dagger.Component;
 
@@ -12,4 +13,8 @@ public interface ComputeComponent {
     ComputeLayer getComputeLayer();
 
     void inject  (MainActivity mainActivity);
+
+    void inject  (ComputeLayer computeLayer);
+
+    void inject  (NetworkSetup networkSetup);
 }

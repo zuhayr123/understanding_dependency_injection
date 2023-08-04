@@ -2,16 +2,18 @@ package com.example.understandingdependencyinjection;
 
 import android.util.Log;
 
+import com.example.understandingdependencyinjection.di.DaggerComputeComponent;
+
 import javax.inject.Inject;
 
 public class ComputeLayer {
     String TAG = this.getClass().getCanonicalName();
     String layer = "Computation";
-    NetworkSetup network;
+    @Inject NetworkSetup network;
 
     @Inject
-    ComputeLayer(NetworkSetup networkSetup){
-        this.network = networkSetup;
+    ComputeLayer(){
+
     }
 
     public boolean add (int a , int b){
