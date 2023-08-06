@@ -28,5 +28,6 @@ class MainActivity : AppCompatActivity() {
             computation?.add(1,1)
             Log.e(TAG, "Button click detected")
         }
+    Log.e(TAG, "Main Activity Created")
     }
 }

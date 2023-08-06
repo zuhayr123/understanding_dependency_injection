@@ -12,6 +12,7 @@ public class ComputeLayer {
     @Inject
     ComputeLayer(NetworkSetup networkSetup){
         this.network = networkSetup;
+        Log.e(TAG, "Compute Layer Created");
     }
 
     public void add (int a , int b){
