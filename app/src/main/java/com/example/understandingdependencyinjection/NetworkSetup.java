@@ -18,6 +18,8 @@ public class NetworkSetup {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        Log.e(TAG, "Network Layer Created");
     }
 
     public boolean sendDataToCloud(String data){
