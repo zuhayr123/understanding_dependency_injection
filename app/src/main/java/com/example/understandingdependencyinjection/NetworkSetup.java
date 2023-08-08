@@ -8,8 +8,8 @@ public class NetworkSetup {
     String TAG = this.getClass().getCanonicalName();
     StorageLayer storageLayer;
 
-    @Inject
-    NetworkSetup(StorageLayer storageLayer){
+
+    public NetworkSetup(StorageLayer storageLayer){
         this.storageLayer = storageLayer;
         try {
             Log.e(TAG, "Initialising network" );

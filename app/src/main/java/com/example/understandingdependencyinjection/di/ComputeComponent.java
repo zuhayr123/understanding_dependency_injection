@@ -5,7 +5,7 @@ import com.example.understandingdependencyinjection.MainActivity;
 
 import dagger.Component;
 
-@Component
+@Component (modules = NetworkModule.class)
 public interface ComputeComponent {
     //annotation processing
 

@@ -7,8 +7,7 @@ import javax.inject.Inject;
 public class StorageLayer {
     String TAG = this.getClass().getCanonicalName();
 
-    @Inject
-    StorageLayer(){
+    public StorageLayer(){
         try {
             Log.e(TAG, "Initialising Storage" );
             Thread.sleep(1000);
@@ -16,6 +15,7 @@ public class StorageLayer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Log.e(TAG, "Storage Layer Created");
     }
 
     public boolean saveDataToStorage(String data){
