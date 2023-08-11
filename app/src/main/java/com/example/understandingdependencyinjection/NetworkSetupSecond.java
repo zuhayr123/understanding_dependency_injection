@@ -4,27 +4,27 @@ import android.util.Log;
 
 import javax.inject.Inject;
 
-public class NetworkSetup implements NetworkLayer {
+public class NetworkSetupSecond implements NetworkLayer{
     String TAG = this.getClass().getCanonicalName();
     StorageLayer storageLayer;
 
     @Inject
-    public NetworkSetup(StorageLayer storageLayer){
+    public NetworkSetupSecond(StorageLayer storageLayer){
         this.storageLayer = storageLayer;
         try {
-            Log.e(TAG, "Initialising network" );
-            Thread.sleep(6000);
-            Log.e(TAG,"Network initialization done");
+            Log.e(TAG, "Initialising network second" );
+            Thread.sleep(3000);
+            Log.e(TAG,"Network Second initialization done");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        Log.e(TAG, "Network Layer Created");
+        Log.e(TAG, "Network Layer Second Created");
     }
 
     @Override
     public boolean sendDataToCloud(String data) {
-        Log.e(TAG,"Sending Data to cloud :: " + data);
+        Log.e(TAG,"Sending Data to cloud from second :: " + data);
         return true;
     }
 

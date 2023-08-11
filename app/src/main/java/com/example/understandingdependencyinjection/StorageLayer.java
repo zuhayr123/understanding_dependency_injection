@@ -16,6 +16,8 @@ public class StorageLayer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        Log.e(TAG, "Storage Layer Created");
     }
 
     public boolean saveDataToStorage(String data){

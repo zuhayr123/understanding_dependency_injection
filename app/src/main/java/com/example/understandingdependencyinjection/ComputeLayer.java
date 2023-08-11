@@ -7,11 +7,11 @@ import javax.inject.Inject;
 public class ComputeLayer {
     String TAG = this.getClass().getCanonicalName();
     String layer = "Computation";
-    NetworkSetup network;
+    NetworkLayer network;
 
     @Inject
-    ComputeLayer(NetworkSetup networkSetup){
-        this.network = networkSetup;
+    ComputeLayer(NetworkLayer networkLayer){
+        this.network = networkLayer;
         Log.e(TAG, "Compute Layer Created");
     }
 
