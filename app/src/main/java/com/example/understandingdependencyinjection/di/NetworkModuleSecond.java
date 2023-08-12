@@ -10,8 +10,14 @@ import dagger.Provides;
 @Module
 public class NetworkModuleSecond {
 
+    int delay;
+
+    public NetworkModuleSecond(int delay){
+        this.delay = delay;
+    }
+
     @Provides
     NetworkLayer provideNetworkSetupSecond(StorageLayer storageLayer){
-        return new NetworkSetupSecond(storageLayer);
+        return new NetworkSetupSecond(storageLayer, delay);
     }
 }

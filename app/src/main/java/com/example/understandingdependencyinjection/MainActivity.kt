@@ -7,6 +7,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.understandingdependencyinjection.di.ComputeComponent
 import com.example.understandingdependencyinjection.di.DaggerComputeComponent
+import com.example.understandingdependencyinjection.di.NetworkModuleSecond
 import javax.inject.Inject
 
 
@@ -21,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         calculate = findViewById(R.id.calculate_sum)
-        val component = DaggerComputeComponent.create()
+
+        //Notice how the create method is chaned with a builder method instead
+
+        val component = DaggerComputeComponent.builder().
+        networkModuleSecond(NetworkModuleSecond(1000)).build()
         component.inject(this)
 
 //        networkSetup = NetworkSetup()

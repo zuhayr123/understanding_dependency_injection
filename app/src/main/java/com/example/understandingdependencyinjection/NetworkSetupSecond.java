@@ -8,12 +8,11 @@ public class NetworkSetupSecond implements NetworkLayer{
     String TAG = this.getClass().getCanonicalName();
     StorageLayer storageLayer;
 
-    @Inject
-    public NetworkSetupSecond(StorageLayer storageLayer){
+    public NetworkSetupSecond(StorageLayer storageLayer, int delay){
         this.storageLayer = storageLayer;
         try {
-            Log.e(TAG, "Initialising network second" );
-            Thread.sleep(3000);
+            Log.e(TAG, "Initialising network second and delay is " + delay );
+            Thread.sleep(delay);
             Log.e(TAG,"Network Second initialization done");
         } catch (InterruptedException e) {
             e.printStackTrace();
