@@ -25,8 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         //Notice how the create method is chaned with a builder method instead
 
-        val component = DaggerComputeComponent.builder().
-        networkModuleSecond(NetworkModuleSecond(1000)).build()
+        val component = DaggerComputeComponent.builder().delay(100).networkModuleSecond(NetworkModuleSecond()).build()
         component.inject(this)
 
 //        networkSetup = NetworkSetup()

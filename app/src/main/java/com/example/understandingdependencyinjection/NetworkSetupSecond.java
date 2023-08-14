@@ -7,7 +7,7 @@ import javax.inject.Inject;
 public class NetworkSetupSecond implements NetworkLayer{
     String TAG = this.getClass().getCanonicalName();
     StorageLayer storageLayer;
-
+    @Inject
     public NetworkSetupSecond(StorageLayer storageLayer, int delay){
         this.storageLayer = storageLayer;
         try {
