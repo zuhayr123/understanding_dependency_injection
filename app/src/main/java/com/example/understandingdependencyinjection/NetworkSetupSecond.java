@@ -3,12 +3,13 @@ package com.example.understandingdependencyinjection;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class NetworkSetupSecond implements NetworkLayer{
     String TAG = this.getClass().getCanonicalName();
     StorageLayer storageLayer;
     @Inject
-    public NetworkSetupSecond(StorageLayer storageLayer, int delay, int status){
+    public NetworkSetupSecond(StorageLayer storageLayer, @Named("delay") int delay, @Named("status") int status){
         this.storageLayer = storageLayer;
         try {
             Log.e(TAG, "Initialising network second and delay is :: " + delay + " and status is :: " + status );

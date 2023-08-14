@@ -3,6 +3,8 @@ package com.example.understandingdependencyinjection.di;
 import com.example.understandingdependencyinjection.ComputeLayer;
 import com.example.understandingdependencyinjection.MainActivity;
 
+import javax.inject.Named;
+
 import dagger.BindsInstance;
 import dagger.Component;
 
@@ -18,7 +20,10 @@ public interface ComputeComponent {
         ComputeComponent build();
 
         @BindsInstance
-        Builder delay(int delay);
+        Builder delay(@Named("delay") int delay);
+
+        @BindsInstance
+        Builder status(@Named("status")int status);
 
         Builder networkModuleSecond(NetworkModuleSecond networkModuleSecond);
     }
