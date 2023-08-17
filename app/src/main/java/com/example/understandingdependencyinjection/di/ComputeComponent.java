@@ -4,10 +4,11 @@ import com.example.understandingdependencyinjection.ComputeLayer;
 import com.example.understandingdependencyinjection.MainActivity;
 
 import javax.inject.Named;
+import javax.inject.Singleton;
 
 import dagger.BindsInstance;
 import dagger.Component;
-
+@Singleton
 @Component (modules = NetworkModuleSecond.class)
 public interface ComputeComponent {
     //annotation processing

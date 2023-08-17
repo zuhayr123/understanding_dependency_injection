@@ -3,7 +3,9 @@ package com.example.understandingdependencyinjection;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class ComputeLayer {
     String TAG = this.getClass().getCanonicalName();
     String layer = "Computation";
@@ -12,7 +14,7 @@ public class ComputeLayer {
     @Inject
     ComputeLayer(NetworkLayer networkLayer){
         this.network = networkLayer;
-        Log.e(TAG, "Compute Layer Created");
+        Log.e(TAG, "Compute Layer Created uses network layer as " + networkLayer);
     }
 
     public boolean add (int a , int b){

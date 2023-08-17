@@ -1,11 +1,9 @@
 package com.example.understandingdependencyinjection
 
-import android.app.admin.NetworkEvent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.understandingdependencyinjection.di.ComputeComponent
 import com.example.understandingdependencyinjection.di.DaggerComputeComponent
 import com.example.understandingdependencyinjection.di.NetworkModuleSecond
 import javax.inject.Inject
@@ -17,6 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var computation : ComputeLayer
+
+    @Inject
+    lateinit var computation2 : ComputeLayer
 //    var networkSetup: NetworkSetup? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +32,11 @@ class MainActivity : AppCompatActivity() {
 //        networkSetup = NetworkSetup()
 //        computation = ComputeLayer(networkSetup)
 
+    Log.e(TAG, "computation 1 is : $computation + and second computation is $computation2" )
+
         calculate?.setOnClickListener {
             computation.add(1,1)
-            Log.e(TAG, "Button click detected")
+            Log.e(TAG, "Button click uses computeLayer to be ")
         }
     Log.e(TAG, "Main Activity Created")
     }
