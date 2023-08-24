@@ -1,5 +1,6 @@
 package com.example.understandingdependencyinjection
 
+import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         //Notice how the create method is chaned with a builder method instead
 
-        val component = DaggerComputeComponent.builder().delay(100).status(10).networkModuleSecond(NetworkModuleSecond()).build()
+        val component = (application as MyApp).appComponent
         component.inject(this)
 
 //        networkSetup = NetworkSetup()
