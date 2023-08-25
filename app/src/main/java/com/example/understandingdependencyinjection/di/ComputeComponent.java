@@ -13,9 +13,9 @@ import dagger.Component;
 public interface ComputeComponent {
     //annotation processing
 
-    ComputeLayer getComputeLayer();
-
-    void inject  (MainActivity mainActivity);
+//    ComputeLayer getComputeLayer();
+//
+//    void inject  (MainActivity mainActivity);
     @Component.Builder
     interface Builder{
         ComputeComponent build();

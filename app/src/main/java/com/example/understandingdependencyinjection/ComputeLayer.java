@@ -2,17 +2,19 @@ package com.example.understandingdependencyinjection;
 
 import android.util.Log;
 
+import com.example.understandingdependencyinjection.di.PerActivity;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@Singleton
+@PerActivity
 public class ComputeLayer {
     String TAG = this.getClass().getCanonicalName();
     String layer = "Computation";
     NetworkLayer network;
 
     @Inject
-    ComputeLayer(NetworkLayer networkLayer){
+    public ComputeLayer(NetworkLayer networkLayer){
         this.network = networkLayer;
         Log.e(TAG, "Compute Layer Created uses network layer as " + networkLayer);
     }

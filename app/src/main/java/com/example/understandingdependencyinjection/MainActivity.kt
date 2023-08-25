@@ -1,12 +1,9 @@
 package com.example.understandingdependencyinjection
 
-import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.understandingdependencyinjection.di.DaggerComputeComponent
-import com.example.understandingdependencyinjection.di.NetworkModuleSecond
 import javax.inject.Inject
 
 
@@ -19,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var computation2 : ComputeLayer
-//    var networkSetup: NetworkSetup? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,8 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         //Notice how the create method is chaned with a builder method instead
 
-        val component = (application as MyApp).appComponent
-        component.inject(this)
+//        val component = DaggerActivityComponent.builder().computeModule(ComputeModule(computation.network)).build()
+//        component.inject(this)
 
 //        networkSetup = NetworkSetup()
 //        computation = ComputeLayer(networkSetup)
