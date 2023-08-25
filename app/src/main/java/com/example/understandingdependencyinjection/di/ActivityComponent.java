@@ -1,21 +1,15 @@
 package com.example.understandingdependencyinjection.di;
 
 import com.example.understandingdependencyinjection.ComputeLayer;
+import com.example.understandingdependencyinjection.MainActivity;
 
-import javax.inject.Named;
-
-import dagger.BindsInstance;
 import dagger.Component;
+import dagger.Subcomponent;
 
 @PerActivity
-@Component(dependencies = ComputeComponent.class)
+@Subcomponent
 public interface ActivityComponent {
     ComputeLayer getComputeLayer();
 
-    @Component.Builder
-    interface Builder{
-        ActivityComponent build();
-
-        Builder computeComponent (ComputeComponent computeComponent);
-    }
+    void inject  (MainActivity mainActivity);
 }

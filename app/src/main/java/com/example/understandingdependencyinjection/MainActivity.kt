@@ -1,9 +1,11 @@
 package com.example.understandingdependencyinjection
 
+import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.understandingdependencyinjection.di.ActivityComponent
 import javax.inject.Inject
 
 
@@ -21,13 +23,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         calculate = findViewById(R.id.calculate_sum)
 
-        //Notice how the create method is chaned with a builder method instead
+        val component = (application as MyApp).appComponent.activityComponent
 
-//        val component = DaggerActivityComponent.builder().computeModule(ComputeModule(computation.network)).build()
-//        component.inject(this)
-
-//        networkSetup = NetworkSetup()
-//        computation = ComputeLayer(networkSetup)
+        component.inject(this)
 
     Log.e(TAG, "computation 1 is : $computation + and second computation is $computation2" )
 

@@ -11,11 +11,8 @@ import dagger.Component;
 @Singleton
 @Component (modules = NetworkModuleSecond.class)
 public interface ComputeComponent {
-    //annotation processing
 
-//    ComputeLayer getComputeLayer();
-//
-//    void inject  (MainActivity mainActivity);
+    ActivityComponent getActivityComponent();
     @Component.Builder
     interface Builder{
         ComputeComponent build();
