@@ -7,7 +7,7 @@ import com.example.understandingdependencyinjection.di.PerActivity;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-@PerActivity
+//@PerActivity
 public class ComputeLayer {
     String TAG = this.getClass().getCanonicalName();
     String layer = "Computation";
