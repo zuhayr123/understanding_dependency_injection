@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         calculate = findViewById(R.id.calculate_sum)
 
-        val component = (application as MyApp).appComponent.activityComponent
+        val component = (application as MyApp).appComponent.activityBuilder.build()
 
         component.inject(this)
 

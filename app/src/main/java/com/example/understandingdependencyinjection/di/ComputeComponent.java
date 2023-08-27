@@ -12,17 +12,12 @@ import dagger.Component;
 @Component (modules = NetworkModuleSecond.class)
 public interface ComputeComponent {
 
-    ActivityComponent getActivityComponent();
-    @Component.Builder
-    interface Builder{
-        ComputeComponent build();
+    ActivityComponent.Builder getActivityBuilder();
+    @Component.Factory
+    interface Factory{
+        ComputeComponent create(@BindsInstance @Named("delay") int delay
+                                , @BindsInstance @Named("status")int status,
+                                NetworkModuleSecond networkModuleSecond);
 
-        @BindsInstance
-        Builder delay(@Named("delay") int delay);
-
-        @BindsInstance
-        Builder status(@Named("status")int status);
-
-        Builder networkModuleSecond(NetworkModuleSecond networkModuleSecond);
     }
 }

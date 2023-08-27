@@ -12,7 +12,7 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        component = DaggerComputeComponent.builder().delay(100).status(10).networkModuleSecond(new NetworkModuleSecond()).build();
+        component = DaggerComputeComponent.factory().create(100, 10, new NetworkModuleSecond());
     }
 
     public ComputeComponent getAppComponent(){
