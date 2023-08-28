@@ -6,7 +6,10 @@ import com.example.understandingdependencyinjection.di.ComputeComponent;
 import com.example.understandingdependencyinjection.di.DaggerComputeComponent;
 import com.example.understandingdependencyinjection.di.NetworkModuleSecond;
 
-public class MyApp extends Application {
+import dagger.android.AndroidInjector;
+import dagger.android.support.DaggerApplication;
+
+public class MyApp extends DaggerApplication {
     private ComputeComponent component;
     @Override
     public void onCreate() {
@@ -17,5 +20,10 @@ public class MyApp extends Application {
 
     public ComputeComponent getAppComponent(){
         return component;
+    }
+
+    @Override
+    protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+        return DaggerComputeComponent.factory().create(1000, 10, new NetworkModuleSecond());
     }
 }
