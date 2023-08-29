@@ -8,11 +8,16 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import dagger.multibindings.IntoMap;
+import dagger.multibindings.IntoSet;
+import dagger.multibindings.StringKey;
 
 @Module
 public class NetworkModuleSecond {
     @Singleton
     @Provides
+    @IntoMap
+    @StringKey("provideNetworkSetupSecond")
     NetworkLayer provideNetworkSetupSecond(NetworkSetupSecond networkSetupSecond){
         return networkSetupSecond;
     }

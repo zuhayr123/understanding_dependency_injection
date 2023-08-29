@@ -2,8 +2,8 @@ package com.example.understandingdependencyinjection;
 
 public interface NetworkLayer {
 
-    boolean sendDataToCloud(String data);
+    public boolean sendDataToCloud(String data);
 
-    boolean saveDataToStorage(String data);
+    public boolean saveDataToStorage(String data);
 
 }

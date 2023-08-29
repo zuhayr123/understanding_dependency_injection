@@ -12,7 +12,7 @@ public class NetworkSetup implements NetworkLayer {
     public NetworkSetup(StorageLayer storageLayer){
         this.storageLayer = storageLayer;
         try {
-            Log.e(TAG, "Initialising network" );
+            Log.e(TAG, "Initialising network first and delay is :: ");
             Thread.sleep(6000);
             Log.e(TAG,"Network initialization done");
         } catch (InterruptedException e) {
@@ -24,7 +24,7 @@ public class NetworkSetup implements NetworkLayer {
 
     @Override
     public boolean sendDataToCloud(String data) {
-        Log.e(TAG,"Sending Data to cloud :: " + data);
+        Log.e(TAG,"Sending Data to cloud from networkSetup:: " + data);
         return true;
     }
 
